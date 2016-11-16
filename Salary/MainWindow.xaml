@@ -1,0 +1,34 @@
+﻿    <Window x:Class="Salary.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Salary"
+        mc:Ignorable="d"
+        Title="Susan's Salary Calcualtor" WindowStartupLocation="CenterScreen" Height="350" Width="525" Background="Cyan">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBox Name="tbDays" Text="{Binding TotalDays}" Grid.Row="0" Height="25" MinWidth="100" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,6"/>
+            <Label Name="lblError" Content="{Binding ErrorMsg}" FontSize="15" Foreground="Red" Grid.Row="1" Margin="5" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        </Grid>
+        <Label Content="Calculate for Susan's Salary" FontSize="25" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Label Content="Days Susan worked:" FontSize="20" Grid.Row="1" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+        <Button Name="btnCalc" Content="Calculate" FontSize="20" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="5" VerticalAlignment="Top" HorizontalAlignment="Center" Click="btnCalc_Click"/>
+        <Label Content="Total Salary:" FontSize="20" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+        <Label Name="lblSalary" Grid.Row="3" Grid.Column="1" Content="{Binding TotalSalary}" FontSize="20" Foreground="Red" VerticalContentAlignment="Top" HorizontalContentAlignment="Left"/>
+    </Grid>
+</Window>
